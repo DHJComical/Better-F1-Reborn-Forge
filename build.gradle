@@ -16,6 +16,12 @@ java {
 
 repositories {
     mavenCentral()
+    maven { url = "https://api.modrinth.com/maven" }
+}
+
+dependencies {
+    // Oculus (Iris Forge port) for the shader-compat hand rendering mixin
+    compileOnly "maven.modrinth:oculus:1.18.2-1.6.4"
 }
 
 unimined.minecraft {
