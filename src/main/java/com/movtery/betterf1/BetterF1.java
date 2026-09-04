@@ -1,5 +1,6 @@
 package com.movtery.betterf1;
 
+import com.movtery.betterf1.client.HUDState;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
@@ -9,6 +10,8 @@ import org.apache.logging.log4j.Logger;
 public class BetterF1 {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
+
+    public static HUDState state = HUDState.ALL_VISIBLE;
 
     /**
      * <a href="https://cleanroommc.com/wiki/forge-mod-development/event#overview">
