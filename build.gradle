@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'xyz.wagyourtail.unimined' version '1.4.1'
+}
+
+base {
+    archivesName = "Better-F1-Forge-${project.minecraft_version}"
+}
+
+java {
+    withSourcesJar()
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+unimined.minecraft {
+    version project.minecraft_version
+
+    mappings {
+        mojmap()
+    }
+
+    minecraftForge {
+        loader project.forge_version
+        // registers the config for dev runs (--mixin arg) AND writes the
+        // MixinConfigs manifest attribute into the built jar (production)
+        mixinConfig "betterf1.mixins.json"
+    }
+}
+
+processResources {
+    filesMatching('META-INF/mods.toml') {
+        expand 'mod_id': project.mod_id,
+               'mod_name': project.mod_name,
+               'mod_author': project.mod_author,
+               'version': project.version,
+               'license': project.license,
+               'description': project.description
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
