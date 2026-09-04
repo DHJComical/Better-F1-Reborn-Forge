@@ -16,6 +16,12 @@ java {
 
 repositories {
     mavenCentral()
+    maven { url = 'https://api.modrinth.com/maven' }
+}
+
+dependencies {
+    // Oculus (Iris port for Forge 1.20.1) - compile stub for the compat mixin
+    compileOnly "maven.modrinth:oculus:1.20.1-1.8.0"
 }
 
 unimined.minecraft {

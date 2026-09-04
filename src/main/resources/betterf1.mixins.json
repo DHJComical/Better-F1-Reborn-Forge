@@ -6,6 +6,9 @@
   "mixins": [
   ],
   "client": [
+    "compat_iris.MixinHandRenderer",
+    "GameRendererMixin",
+    "KeyboardMixin"
   ],
   "server": [
   ],
