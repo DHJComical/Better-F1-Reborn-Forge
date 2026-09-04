@@ -16,6 +16,12 @@ targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
+    maven { url = "https://api.modrinth.com/maven" }
+}
+
+dependencies {
+    // Oculus (Iris port for 1.16.5) — compile-time reference for the @Pseudo compat mixin
+    compileOnly "maven.modrinth:oculus:1.16.5-1.4.8"
 }
 
 unimined.minecraft {
