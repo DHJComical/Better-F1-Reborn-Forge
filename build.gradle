@@ -16,6 +16,12 @@ java {
 
 repositories {
     mavenCentral()
+    // Oculus (Iris Forge fork) for the optional shader-compat mixin
+    maven { url = "https://api.modrinth.com/maven" }
+}
+
+dependencies {
+    compileOnly "maven.modrinth:oculus:1.19.2-1.6.9a"
 }
 
 unimined.minecraft {

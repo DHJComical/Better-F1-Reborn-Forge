@@ -6,6 +6,9 @@
   "mixins": [
   ],
   "client": [
+    "compat_oculus.MixinHandRenderer",
+    "GameRendererMixin",
+    "KeyboardMixin"
   ],
   "server": [
   ],
